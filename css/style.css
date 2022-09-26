@@ -40,7 +40,45 @@
 *::after {
   box-sizing: border-box;
 }
-.mobile-logo img
+/* Dropdown Button */
+.dropbtn {
+  background-color: #04aa6d00;
+  color: white;
+  padding-top: 20px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+img.mobile-logo
 {
   width: 50%;
 }
@@ -234,11 +272,16 @@ li
 }
 .home-banner .content-part .home-banner-btn 
 {
-  padding:15px 15px;
-  font-size: 12px;
+  padding:10px 10px;
+  font-size: 10px;
+  top: 0px;
+}
+.dropbtn
+{
+  padding-top: 5px;
+  padding-left: 0;
 }
 }
-
 #accordion .panel {
   border: none;
   border-radius: 3px;
@@ -331,13 +374,14 @@ li
   left: -50px;
   height: 100%;
   width: 100%;
+  z-index: -99;
 }
 
 .care-product-listing {
   margin: -135px 0 0px 0;
   width: 100%;
-  z-index: 99;
   text-align: center;
+  /* z-index: 99; */
 }
 .care-product-listing li {
   width: 20%;
@@ -360,6 +404,10 @@ li
     padding: 0 40px;
     margin-top: 50px;
   }
+  .care-product-listing h5
+  {
+    font-size: 15px;
+  }
   .welcome-text {
     font-size: 14px;
     line-height: 27px;
@@ -367,11 +415,16 @@ li
 }
   .content-part
   {
-    margin-top: 15px;
+    margin-top: 0px;
   }
   .content-part p
   {
     font-size: 13px;
+    margin-right: 20%;
+  }
+  .content-part h1
+  {
+    font-size: 20px;
   }
   .home-container
   {
@@ -487,9 +540,6 @@ li
   display: flex;
   margin-bottom: 30px !important;
   /* margin: 10px 80px 10px 80px; */
-}
-.causes-box-left {
-  margin: 2% 0 2% 20%;
 }
 .causes-box li:nth-child(1) {
   margin-right: 15px;
@@ -10920,7 +10970,12 @@ a.text-dark:hover, a.text-dark:focus {
   border-top: 1px dashed #bec5cb;
   z-index: -1;
 }
-
+@media only screen and (max-width: 749px){
+  .section-title
+  {
+    font-size: 20px;
+  }
+}
 .product-offer {
   position: relative;
   overflow: hidden;
