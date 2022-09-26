@@ -41,6 +41,7 @@
   box-sizing: border-box;
 }
 /* Dropdown Button */
+
 .dropbtn {
   background-color: #04aa6d00;
   color: white;
@@ -186,6 +187,13 @@ li
   align-items: center;
   display: table;
   margin: 10px auto 0px auto;
+}
+@media only screen and (max-width:749px){
+  .problems-to-cure .book-consultation
+  {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
 }
 .performance-booster-bg-color {
   background-color: #af1106 !important;
@@ -467,7 +475,14 @@ li
 .Home-Remedies-posts .col-md-4 {
   margin-bottom: 30px;
 }
-
+@media only screen and (max-width:450px){
+.posts-tabs-part .nav-tabs .nav-link
+{
+  font-size: 10px;
+  width: 150px;
+  padding:0.5rem 1rem;
+}
+}
 /* 2nd section */
 .consulted-by-doctors .boxes {
   background-color: #FFFFFF !important;
@@ -587,7 +602,12 @@ li
   width: 100%;
 }
 }
-
+@media only screen and (max-width:475px){
+  .causes-box-left, .causes-box-right
+  {
+    height: max-content;
+  }
+}
 
 
 /* <sexual care kit page code> */
@@ -826,6 +846,12 @@ hr.performance-booster-bg-color
 {
   text-decoration: none;
   color:#222;
+}
+@media only screen and (max-width:400px){
+  .knowladge-center-container h5
+  {
+    font-size: 11px;
+  }
 }
 .knowladge-center-container h5
 {
@@ -11118,4 +11144,12 @@ a.text-dark:hover, a.text-dark:focus {
   100% {
     transform: translateY(-15px);
   }
+}
+@media only screen and (max-width:400px){
+  .adt-btn
+  {
+    font-size: 10px;
+    padding: 12px 12px;
+  }
+  
 }
