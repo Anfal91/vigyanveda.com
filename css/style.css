@@ -305,6 +305,10 @@ li
   border-radius: 3px;
   background: transparent;
 }
+.panel-heading h4 a i
+{
+  /* margin-left: 30px; */
+}
 #accordion .panel-body {
   padding: 15px 15px 0px 10px;
   background: transparent;
@@ -479,7 +483,7 @@ li
 .posts-tabs-part .nav-tabs .nav-link
 {
   font-size: 10px;
-  width: 150px;
+  width: 130px;
   padding:0.5rem 1rem;
 }
 }
