@@ -168,4 +168,98 @@ $(document).ready(function(){
       });
   
   });    
-  
+
+
+
+let product1 = document.getElementById('product1');
+
+let basket = JSON.parse(localStorage.getItem("data")) || [];
+
+let generateShop =() => {
+    return (product1.innerHTML= kitItemData.map((x)=>{
+        let {id, name, realPrice, price, Image, link} = x;
+        let search= basket.find(()=>x.id === id) || []
+        return `
+        <div id=product-id-${id} class="col-lg-4 col-md-4 col-sm-6 pb-1">
+        <div class="product-item bg-light mb-4">
+        <div class="product-img position-relative overflow-hidden">
+            <img class="img-fluid w-100" src="${Image}" alt="">
+            <div class="product-action">
+                <button id=${id} onclick="increment(${id})" class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></button>
+                <a class="btn btn-outline-dark btn-square" href="${link}"><i class="fa fa-eye"></i></a>
+            </div>
+        </div>
+        <div class="text-center py-4">
+            <a class="h6 text-decoration-none text-truncate" href="">${name}</a>
+            <div class="d-flex align-items-center justify-content-center mt-2">
+                <h5>$${price}.00</h5><h6 class="text-muted ml-2"><del>$${realPrice}.00</del></h6>
+            </div>
+            <div class="d-flex align-items-center justify-content-center mb-1">
+                <small class="fa fa-star text-primary mr-1"></small>
+                <small class="fa fa-star text-primary mr-1"></small>
+                <small class="fa fa-star text-primary mr-1"></small>
+                <small class="fa fa-star text-primary mr-1"></small>
+                <small class="fa fa-star text-primary mr-1"></small>
+                <small>(99)</small>
+            </div>
+        </div>
+    </div>
+</div>
+        `;
+    })
+    .join(""));
+};
+generateShop();
+
+let increment = (id)=> {
+    let selectedItem = id;
+    let search = basket.find((x)=> x.id === selectedItem.id)
+
+    if(search === undefined){
+        basket.push({
+            id:selectedItem.id,
+            item: 1
+        });
+    }
+    else{
+        search.item += 1;
+    }
+    localStorage.setItem("data", JSON.stringify(basket));
+    // console.log(basket);
+    update(selectedItem.id);
+};
+
+let update = (id) =>{
+    let search = basket.find((x) => x.id === id);
+    // console.log(search.item);
+    calculation();
+};
+
+let calculation =()=>{
+    let cartIcon = document.getElementById("cartAmount");
+    cartIcon.innerHTML=basket.map((x)=>x.item).reduce((x,y)=>x+y,0);
+    
+    let cartIcon2 = document.getElementById("cartAmount2");
+    cartIcon2.innerHTML=basket.map((x)=>x.item).reduce((x,y)=>x+y,0);
+};
+calculation();
+// let cartCount = document.getElementById('cartCount');
+
+// generateCountCart = () =>{
+//     return cartCount.innerHTML =
+//     `
+//     <a href="" style="color:white;" class="btn px-0 ml-3">
+//     <i class="fas fa-shopping-cart text-primary"></i>
+//     <span id=${kitItemData.id} class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+//     </a>
+//     `
+// };
+
+// generateCountCart();
+// let cartCount = document.getElementById('cartCount') 
+
+// let generateCart = ()=> {
+//     cartCount.id = ($(x.id));
+// }
+
+// generateCart();

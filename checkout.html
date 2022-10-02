@@ -112,7 +112,7 @@
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                         <a href="" style="color:white;" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <span id="cartAmount" class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                             <!-- <a href="" class="btn px-0 ml-2">
                                 <i class="fas fa-shopping-cart text-dark"></i>
@@ -263,7 +263,7 @@
             </div>
             <div class="col-lg-4">
                 <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Order Total</span></h5>
-                <div class="bg-light p-30 mb-5">
+                <div id="finalResult" class="bg-light p-30 mb-5">
                     <div class="border-bottom">
                         <h6 class="mb-3">Products</h6>
                         <div class="d-flex justify-content-between">
@@ -282,7 +282,7 @@
                     <div class="border-bottom pt-3 pb-2">
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Subtotal</h6>
-                            <h6>$150</h6>
+                            <h6 id="subTotal">$150</h6>
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
@@ -292,7 +292,7 @@
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                            <h5>$160</h5>
+                            <h5 id="ckoutGrandTotal">$160</h5>
                         </div>
                     </div>
                 </div>
@@ -413,6 +413,8 @@
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
+    <script src="js/cart.js"></script>
+    <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 </body>
 

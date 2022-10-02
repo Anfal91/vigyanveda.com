@@ -88,6 +88,13 @@
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="navbar-nav py-0 d-lg-none">
+                    <a href="cart.html" style="color:white;" class="btn px-0 ml-3">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span id="cartAmount2" class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                        </a>
+                    </div>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="index.html" class="nav-item nav-link">Home</a>
@@ -110,10 +117,10 @@
                           </div>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                    <a href="" style="color:white;" class="btn px-0 ml-3">
+                        <a href="cart.html" style="color:white;" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>
-                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                        </a>
+                            <span id="cartAmount" class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
                         <!-- <a href="" class="btn px-0 ml-2">
                             <i class="fas fa-shopping-cart text-dark"></i>
                             <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
@@ -281,6 +288,8 @@
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
+    <script src="js/cart.js"></script>
+    <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 </body>
 
